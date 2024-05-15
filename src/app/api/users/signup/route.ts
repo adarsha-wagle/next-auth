@@ -11,6 +11,7 @@ connectDB();
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
+    console.log("request body", reqBody);
     const { username, email, password } = reqBody;
 
     // Validation
@@ -33,7 +34,7 @@ export async function POST(request: NextRequest) {
       password: hashedPassword,
     });
 
-    const savedUser = await user.save();
+    const savedUser = await newUser.save();
 
     console.log("Saved User ", savedUser);
 
