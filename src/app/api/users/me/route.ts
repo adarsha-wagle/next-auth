@@ -5,7 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 connectDB();
 
-export async function GET(request: NextRequest) {
+// GET?
+export async function POST(request: NextRequest) {
   try {
     const userId = await getDataFromToken(request);
 
